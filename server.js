@@ -22,7 +22,7 @@ app.get('/recipes/:ingredient', (req, res) => {
     request.get(`https://recipes-goodness.herokuapp.com/recipes/${req.params.ingredient}`, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             res.send(JSON.parse(body).results.map(recipeArray =>{
-                return {title:recipeArray.title, thumbnail:recipeArray.thumbnail ,href:recipeArray.href}
+                return {title:recipeArray.title, thumbnail:recipeArray.thumbnail ,href:recipeArray.href, ingredients:recipeArray.ingredients}
             })
         )}
     })

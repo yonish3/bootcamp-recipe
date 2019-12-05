@@ -10,11 +10,25 @@
 <body>
      <input type="text">
      <button>Search!</button>
+     <div id=container></div>
 </body>
 
 <script src="../jquery/dist/jquery.js"></script>
 <script src="../handlebars/dist/handlebars.js"></script>
+<script src="Renderer.js"></script>
 <script src="main.js"></script>
+<script id="recipes-template" type="text/x-handlebars-template">
 
+    {{#each this}}
+    <div class='recipe'>
+        <a class='title' href="{{ href }}" target="_blank">{{ title }}</a>
+        <img src="{{thumbnail}}" alt="">
+        {{#each this.ingredients as |item|}}
+            <li> {{item}}</li>
+        {{/each}}
+
+    </div> 
+        {{/each}}
+  </script>
 
 </html>
