@@ -21,8 +21,10 @@
 
     {{#each this}}
     <div class='recipe'>
-        <a class='title' href="{{ href }}" target="_blank">{{ title }}</a>
-        <img src="{{thumbnail}}" alt="">
+        <div class='title' >
+            <a href="{{ href }}" target="_blank">{{ title }}</a>
+        </div><br>
+            <img src="{{thumbnail}}" alt=""><br>   
         {{#each this.ingredients as |item|}}
             <li class='ingredient'> {{item}}</li>
         {{/each}}
